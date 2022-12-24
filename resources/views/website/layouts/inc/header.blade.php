@@ -91,7 +91,7 @@
                                         <a href="{{route('login')}}">login admin</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('login')}}">login Client</a>
+                                        <a href="{{route('client.login')}}">login Client</a>
                                     </li>
                                     @endguest
                                     @auth
@@ -153,14 +153,20 @@
                             <li class="menu-item-has-children">
                                 <a href="{{route('products')}}">products</a>
                             </li>
+                            @guest
                             <li class="menu-item-has-children">
                                 <a href="{{route('login')}}">login admin</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="{{route('login')}}">login Client</a>
+                                <a href="{{route('client.login')}}">login Client</a>
                             </li>
 
-
+                            @endguest
+                            @auth
+                            <li class="menu-item-has-children">
+                                <a href="{{route('admin.home')}}">Dashboard</a>
+                            </li>
+                            @endauth
                         </ul>
                     </nav>
                     <!-- mobile menu end -->

@@ -103,12 +103,12 @@ $settings = App\Models\Setting::first();
                     <!--begin::Wrapper-->
                     <div class="w-lg-500px p-10 p-lg-15 mx-auto">
                         <!--begin::Form-->
-                        <form class="form w-100" id="kt_sign_in_form" method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('client.login') }}">
                             @csrf
                             <!--begin::Heading-->
                             <div class="text-center mb-10">
                                 <!--begin::Title-->
-                                <h1 class="text-dark mb-4">Sign In <u>Admin</u>  to {{$settings->title}}</h1>
+                                <h1 class="text-dark mb-4">Sign In <u>Client</u> to {{$settings->title}}</h1>
                                 <!--end::Title-->
                                 <!--begin::Link-->
                                 {{-- <div class="text-gray-400 fw-bold fs-4">New Here?
@@ -122,7 +122,7 @@ $settings = App\Models\Setting::first();
                                 <label for="email" class="form-label fs-6 fw-bolder text-dark">{{ __('Email Address') }}</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input id="email" type="email" name="email" value="admin@admin.com" placeholder="email" required autocomplete="email" autofocus class=" @error('email') is-invalid @enderror form-control form-control-lg form-control-solid " />
+                                <input id="email" type="email" name="email" value="user@user.com" placeholder="Email" required autocomplete="email" autofocus class=" @error('email') is-invalid @enderror form-control form-control-lg form-control-solid " />
                                 <!--end::Input-->
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -202,6 +202,7 @@ $settings = App\Models\Setting::first();
                     <!--begin::Links-->
                     <div class="d-flex flex-center fw-bold fs-6">
                         <a href="{{route('home')}}" class="text-muted text-hover-primary px-2">{{__('Home')}}</a>
+                        <a href="{{route('client.register')}}" class="text-muted text-hover-primary px-2">{{__('register Client')}}</a>
                     </div>
                     <!--end::Links-->
                 </div>

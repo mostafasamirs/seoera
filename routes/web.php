@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\TouchController;
+use App\Http\Controllers\Dashboard\ClientController;
 use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Dashboard\LanguageController;
 use App\Http\Controllers\Dashboard\ProducerController;
@@ -56,7 +57,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     // route sittings
     Route::resource('settings', SettingController::class)->except(['show', 'store']);
     // route sittings
-
+    // route ClientController
+    Route::resource('clients', ClientController::class);
+    // route ClientController
 
     // route products
     Route::resource('products', ProducerController::class);
@@ -92,5 +95,13 @@ Route::fallback(function () {
     $settings = Setting::first();
     return view('dashboard.404', compact('settings'));
 });
-    // end route dashboard//
+// end route dashboard//
 // end dashboard
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

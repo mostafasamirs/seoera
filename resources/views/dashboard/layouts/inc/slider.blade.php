@@ -139,6 +139,50 @@
 				                {{-- User Route --}}
 
 
+				                {{-- clients Route --}}
+				                <div class="menu-item">
+				                    <div class="menu-content pt-8 pb-2">
+				                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{__('Cleints')}}</span>
+				                    </div>
+				                </div>
+				                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ (request()->is('admin/clients*')) ? 'hover show' : '' }}">
+				                    <span class="menu-link">
+				                        <span class="menu-icon">
+				                            <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
+				                            <i class="fas fa-users"></i>
+				                            <!--end::Svg Icon-->
+				                        </span>
+				                        <span class="menu-title">{{__('Cleints')}}</span>
+				                        <span class="menu-arrow"></span>
+				                    </span>
+
+				                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+
+				                        <div class="menu-item">
+				                            <a class="menu-link {{ (request()->is('admin/clients')) ? 'active' : '' }}" href="{{route('clients.index')}}">
+				                                <span class="menu-bullet">
+				                                    <span class="bullet bullet-dot"></span>
+				                                </span>
+				                                <span class="menu-title">{{__('Cleints')}}</span>
+				                            </a>
+				                        </div>
+
+				                        <div class="menu-item">
+				                            <a class="menu-link {{ (request()->is('admin/clients/create')) ? 'active' : '' }}" href="{{route('clients.create')}}">
+				                                <span class="menu-bullet">
+				                                    <span class="bullet bullet-dot"></span>
+				                                </span>
+				                                <span class="menu-title">{{__('Create Cleint')}}</span>
+				                            </a>
+				                        </div>
+
+				                    </div>
+				                </div>
+				                {{-- User Route --}}
+
+
+
+
                                 {{-- products Route --}}
 				                <div class="menu-item">
 				                    <div class="menu-content pt-8 pb-2">
