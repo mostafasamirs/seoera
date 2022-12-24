@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 @php
@@ -93,14 +95,24 @@ $settings = App\Models\Setting::first();
 
 <body id="kt_body" class="bg-body">
     <!--begin::Main-->
-    <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Authentication - Sign-in -->
+        <div class="d-flex flex-column flex-lg-row flex-column-fluid">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('client.register') }}">
+            <!--begin::Body-->
+            <div class="d-flex flex-column flex-lg-row-fluid py-10">
+                <!--begin::Content-->
+                <div class="d-flex flex-center flex-column flex-column-fluid">
+                    <!--begin::Wrapper-->
+                    <div class="text-center mb-10">
+                                <!--begin::Title-->
+                                <h1 class="text-dark mb-4">Register <u>Client</u> to {{$settings->title}}</h1>
+                                <!--end::Title-->
+                                <!--begin::Link-->
+                            </div>
+                    <div class="w-lg-500px p-10 p-lg-1 mx-auto">
+                        <!--begin::Form-->
+                        <form method="POST" action="{{ route('client.register') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -161,11 +173,66 @@ $settings = App\Models\Setting::first();
                             </div>
                         </div>
                     </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Wrapper-->
                 </div>
+                <!--end::Content-->
+                <!--begin::Footer-->
+                <div class="d-flex flex-center flex-wrap fs-6 p-5 pb-0">
+                    <!--begin::Links-->
+                    <div class="d-flex flex-center fw-bold fs-6">
+                        <a href="{{route('home')}}" class="text-muted text-hover-primary px-2">{{__('Home')}}</a>
+                        <a href="{{route('client.login')}}" class="text-muted text-hover-primary px-2">{{__('Login Client')}}</a>
+                    </div>
+                    <!--end::Links-->
+                </div>
+                <!--end::Footer-->
             </div>
+            <!--end::Body-->
+
+            <!--begin::Aside-->
+            <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative" style="background-color: #1a1a27!important">
+                <!--begin::Wrapper-->
+                <div class="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-600px scroll-y">
+                    <!--begin::Content-->
+                    <div class="d-flex flex-row-fluid flex-column text-center p-10 pt-lg-20">
+                        <br>
+                        <br>
+                        <h1 class="fw-bolder fs-2qx pb-5 pb-md-10" style="color: white!important;">Welcome to {{$settings->title}}</h1>
+
+                        <!--begin::Logo-->
+
+                        @if ($settings->logo !=null)
+                        <a href="#" class="py-9 mb-5">
+                            <img alt="Logo" src="{{asset($settings->logo)}}" class="h-95px" style="transform: scale(2.8)!important;" />
+                        </a>
+                        @else
+                        <a href="#" class="py-9 mb-5">
+                            <img alt="Logo" src="{{asset('website')}}/images/logo.png" class="h-95px" style="transform: scale(8.2)!important;" />
+                        </a>
+                        @endif
+
+                        <!--end::Logo-->
+                        <!--begin::Title-->
+                        <!--end::Title-->
+                        <!--begin::Description-->
+                        {{-- <p class="fw-bold fs-2" style="color: #ebc543;">Discover Amazing Metronic
+							<br />with great build tools</p> --}}
+                        <!--end::Description-->
+                    </div>
+                    <!--end::Content-->
+                    <!--begin::Illustration-->
+                    <div class="d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-350px" style="background-image: url(/metronic8/demo1/assets/media/illustrations/sketchy-1/13.png"></div>
+                    <!--end::Illustration-->
+                </div>
+                <!--end::Wrapper-->
+            </div>
+            <!--end::Aside-->
+
         </div>
+        <!--end::Authentication - Sign-in-->
     </div>
-</div>
     <!--end::Main-->
 
     <!--begin::Javascript-->
