@@ -1,0 +1,81 @@
+body,html{
+    box-sizing: border-box!important;
+    overflow-x: hidden!important;
+    font-family: 'Cairo', sans-serif!important;
+
+}
+
+.backgroundfooter{
+    background-color: #253D4E!important;
+}
+
+.phonenumber{
+    padding: 7px 0px 0px 0px!important;
+}
+
+.styledescription{
+    font-size: 40px!important;
+}
+
+.actived{
+    color: #3BB77E!important;
+}
+
+
+#contact-form .form-group input{
+    height: 50px;
+}
+
+.stylelanguages{
+    text-align: end!important;
+}
+
+.product-price-cover{
+    float: left!important;
+}
+
+.product-info{
+    text-align: end!important;
+}
+
+.tab-style3 .nav-tabs{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.widget-category-2{
+    direction: ltr!important;
+}
+
+.rtl .section-title.style-1::after {
+    left: 0px;
+    right: unset;
+}
+
+.stylenew .section-title{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.product-cart-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.SendOrder{
+    display: flex!important;
+    flex-direction: row-reverse!important;
+    justify-content: flex-end!important;
+}
+
+
+.product-detail-rating{
+    display: block!important;
+}
+
+.header-wrap{
+    height: 85px!important;
+}
