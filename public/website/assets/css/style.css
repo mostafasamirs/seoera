@@ -79,3 +79,9 @@ body,html{
 .header-wrap{
     height: 85px!important;
 }
+
+@media (min-width: 1250px) {
+    .styleheraders{
+        margin: 0 225px 0px 0px!important;
+    }
+}

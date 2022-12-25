@@ -2,15 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Client\Auth\LoginController;
 
 // Dashboard
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-// Login
+// Login  LoginController
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('client/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Register
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');

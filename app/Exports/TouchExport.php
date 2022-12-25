@@ -49,7 +49,7 @@ class TouchExport implements FromCollection, WithMapping, WithHeadings
       $touch->name,
       $touch->phone,
       $touch->products->name,
-      $touch->users->name,
+      $touch->users->name ?? "no user",
       $touch->massage,
     ];
   }

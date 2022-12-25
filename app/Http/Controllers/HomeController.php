@@ -32,14 +32,14 @@ class HomeController extends Controller
     public function index()
     {
         $settings = Setting::first();
-        $products = Producer::whereNotNull('id')->where('public_unpublic','public')->get();
+        $products = Producer::whereNotNull('id')->where('public_unpublic','public')->get()->shuffle();
         return view('website.home',compact( 'settings','products'));
     }
     // home page
     public function home()
     {
         $settings = Setting::first();
-        $products = Producer::whereNotNull('id')->where('public_unpublic','public')->get();
+        $products = Producer::whereNotNull('id')->where('public_unpublic','public')->get()->shuffle();
         return view('website.home',compact( 'settings', 'products'));
     }
 

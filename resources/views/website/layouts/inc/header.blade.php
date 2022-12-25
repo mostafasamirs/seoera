@@ -75,7 +75,7 @@
                             </div>
                         </div>
 
-                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
+                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading styleheraders">
                             <nav>
                                 <ul>
 
@@ -86,19 +86,42 @@
                                     <li>
                                         <a href="{{route('products')}}">products</a>
                                     </li>
-                                    @guest
+                                    @if(Auth::check ())
+                                    <li>
+                                        <a href="{{route('admin.home')}}">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="event.preventDefault();
+                                                document.getElementById('admin-logout-form').submit();">
+                                            <span>{{ __('Log Out') }}</span>
+                                        </a>
+                                        <form id="admin-logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+
+                                    </li>
+
+                                    @elseif(Auth::guard('client')->user())
+
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="event.preventDefault();
+                                                document.getElementById('admin-logout-form').submit();">
+                                            <span>{{ __('Log Out') }}</span>
+                                        </a>
+                                        <form id="admin-logout-form" action="{{ route('client.logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+
+                                    </li>
+
+                                    @else
                                     <li>
                                         <a href="{{route('login')}}">login admin</a>
                                     </li>
                                     <li>
                                         <a href="{{route('client.login')}}">login Client</a>
                                     </li>
-                                    @endguest
-                                    @auth
-                                    <li>
-                                        <a href="{{route('admin.home')}}">Dashboard</a>
-                                    </li>
-                                    @endauth
+                                    @endif
 
 
 

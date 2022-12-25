@@ -66,7 +66,7 @@
 				                    <span class="menu-link">
 				                        <span class="menu-icon">
 				                            <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
-				                            <i class="fas fa-users"></i>
+				                            <i class="fas fa-language"></i>
 				                            <!--end::Svg Icon-->
 				                        </span>
 				                        <span class="menu-title">{{__('Languages')}}</span>
@@ -192,7 +192,7 @@
 				                <div data-kt-menu-trigger="click" class="menu-item menu-accordion  {{ (request()->is('admin/products*')) ? 'hover show' : '' }}">
 				                    <span class="menu-link">
 				                        <span class="menu-icon">
-				                            <i class="fas fa-user"></i>
+				                            <i class="fab fa-product-hunt"></i>
 				                            <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
 				                            <!--end::Svg Icon-->
 				                        </span>

@@ -99,5 +99,46 @@ class producerSeeder extends Seeder
             'public_unpublic' => 'public',
             'language_id' => 3,
         ]);
+        // ////
+        Producer::create([
+            'name' => 'Dove Shampoo Intensive Repair 350ml',
+            'description' =>
+            '
+            Dove Intense Repair Shampoo, with Bio Restore complex, helps repair your hair from damage. A drop of Bio-Restore+ penetrates deep inside hair, rejuvenates and strengthens fibres and brings hair back to life
+
+            Note: For comprehensive benefits, use with Dove Nutritive Solutions Intense Repair Conditioner
+
+            ',
+            'image' => 'website/assets/imgs/shop/1.jpg',
+            'salary' => 45,
+            'discount' => 50,
+            'public_unpublic' => 'public',
+            'language_id' => 1,
+        ]);
+        Producer::create([
+            'name' => 'Arrow Large Oven Bags - 3 Pieces',
+            'description' =>
+            '
+            If youre too busy to get to the grocery store, there are many ways for the grocery store to come to you! We are offering different food bundles providing all your everyday basics essentials to be shipped right to you. We are Saving your time, stress, gas money, and exposing you to new types of foods and brands that you cant get at your local grocery store.
+            ',
+            'image' => 'website/assets/imgs/shop/2.jpg',
+            'salary' => 44,
+            'discount' => 45,
+            'public_unpublic' => 'public',
+            'language_id' => 3,
+        ]);
+        Producer::create([
+            'name' => 'Hero Baby',
+            'description' =>
+            '
+            o the grocery store, there are many ways for the grocery store to come to you! We are offering different food bundles providing all your everyday basics essentials to be shipped right to you. We are Saving your time, stress, gas money, and exposing you to new types of foods and brands that you cant get at your local gr            ',
+            'image' => 'website/assets/imgs/shop/3.jpg',
+            'salary' => 33.5,
+            'discount' => 35,
+            'public_unpublic' => 'public',
+            'language_id' => 3,
+        ]);
+
+
     }
 }

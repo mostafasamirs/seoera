@@ -2,6 +2,9 @@
 
 ## Introduction ##
 ## Product presentation project 
+## Watch a video about the project
+## Watch the video (seoera.webm)
+
 
 ## Technologies ##
 ## HTML & CSS & Bootstrap  
@@ -48,8 +51,3 @@
 <p><img align="center" src="/public/database.png" alt="mostafasamirs" /></p>
 
 ##### #####  ##### #####  ##### #####  #####  #####  #####
-## Watch a video about the project
-## Watch the video
-
-
-
