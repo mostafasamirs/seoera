@@ -80,11 +80,11 @@
                                 <ul>
 
                                     <li>
-                                        <a href="{{route('home')}}">home</a>
+                                        <a href="{{route('home')}}" class="{{ (request()->is('/')) ? 'active' : '' }} {{ (request()->is('/home')) ? 'active' : '' }}">home</a>
                                     </li>
 
                                     <li>
-                                        <a href="{{route('products')}}">products</a>
+                                        <a href="{{route('products')}}" class="{{ (request()->is('products')) ? 'active' : '' }}">products</a>
                                     </li>
                                     @if(Auth::check ())
                                     <li>
@@ -169,31 +169,55 @@
                         <ul class="mobile-menu font-heading">
 
                             <li class="menu-item-has-children">
-                                <a href="{{route('home')}}">home</a>
+                                <a href="{{route('home')}}" class="{{ (request()->is('/')) ? 'active' : '' }} {{ (request()->is('/home')) ? 'active' : '' }}">home</a>
                             </li>
 
 
                             <li class="menu-item-has-children">
-                                <a href="{{route('products')}}">products</a>
+                                <a href="{{route('products')}}" class="{{ (request()->is('products')) ? 'active' : '' }}">products</a>
                             </li>
-                            @guest
+                            @if(Auth::check ())
+                            <li class="menu-item-has-children">
+                                <a href="{{route('admin.home')}}">Dashboard</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);" onclick="event.preventDefault();
+                                                document.getElementById('admin-logout-form').submit();">
+                                    <span>{{ __('Log Out') }}</span>
+                                </a>
+                                <form id="admin-logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+
+                            </li>
+
+                            @elseif(Auth::guard('client')->user())
+
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);" onclick="event.preventDefault();
+                                                document.getElementById('admin-logout-form').submit();">
+                                    <span>{{ __('Log Out') }}</span>
+                                </a>
+                                <form id="admin-logout-form" action="{{ route('client.logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+
+                            </li>
+
+                            @else
                             <li class="menu-item-has-children">
                                 <a href="{{route('login')}}">login admin</a>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="{{route('client.login')}}">login Client</a>
                             </li>
+                            @endif
 
-                            @endguest
-                            @auth
-                            <li class="menu-item-has-children">
-                                <a href="{{route('admin.home')}}">Dashboard</a>
-                            </li>
-                            @endauth
                         </ul>
                     </nav>
                     <!-- mobile menu end -->
                 </div>
+                <hr>
                 <div class="mobile-social-icon mb-50">
                     <h6 class="mb-15">Follow Us</h6>
                     <a href="{{$settings->facebook}}"><img src="{{asset('website')}}/assets/imgs/theme/icons/icon-facebook-white.svg" alt="" /></a>
